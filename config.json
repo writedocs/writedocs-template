@@ -1,5 +1,7 @@
 {
-  "name": "Project Name",
+  "websiteName": "Project Name",
+  "organizationName": "MyCompany",
+  "repositoryName": "my-repo-name",
   "description": "Project Description",
   "images": {
     "logo": "https://example.com/logo.png",
