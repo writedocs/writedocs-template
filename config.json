@@ -1,4 +1,14 @@
 {
+  "name": "Project Name",
+  "description": "Project Description",
+  "images": {
+    "logo": "https://example.com/logo.png",
+    "favicon": "https://example.com/logo.ico"
+  },
+  "styles": {
+    "mainColor": "#744ffe",
+    "secondaryColor": "#744ffa"
+  },
   "sidebar": {
     "docs": [
       {
