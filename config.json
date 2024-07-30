@@ -1,0 +1,34 @@
+{
+  "sidebar": {
+    "docs": [
+      {
+        "category": "Getting Started",
+        "pages": [
+          "getting-started/introduction",
+          {
+            "page": "getting-started/quickstart",
+            "label": "Quickstart",
+            "pages": [
+              "getting-started/advanced-features"
+            ]
+          }
+        ]
+      }
+    ],
+    "apiReference": [
+      {
+        "category": "Authorization",
+        "pages": [
+          {
+            "page": "api-reference/authorization/create-api-key",
+            "apiMethod": "post"
+          },
+          {
+            "page": "api-reference/authorization/create-app-token",
+            "apiMethod": "post"
+          }
+        ]
+      }
+    ]
+  }
+}
