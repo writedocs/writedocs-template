@@ -21,7 +21,7 @@
         "pages": [
           {
             "page": "api-reference/example/get-items",
-            "apiMethod": "post"
+            "apiMethod": "get"
           },
           {
             "page": "api-reference/example/create-item",
