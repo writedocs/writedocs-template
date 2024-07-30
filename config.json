@@ -17,14 +17,14 @@
     ],
     "apiReference": [
       {
-        "category": "Authorization",
+        "category": "Example",
         "pages": [
           {
-            "page": "api-reference/authorization/create-api-key",
+            "page": "api-reference/example/get-items",
             "apiMethod": "post"
           },
           {
-            "page": "api-reference/authorization/create-app-token",
+            "page": "api-reference/example/create-item",
             "apiMethod": "post"
           }
         ]
