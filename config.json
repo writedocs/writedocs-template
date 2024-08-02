@@ -8,8 +8,7 @@
     "favicon": "https://example.com/logo.ico"
   },
   "styles": {
-    "mainColor": "#744ffe",
-    "secondaryColor": "#744ffe"
+    "mainColor": "#0029F5"
   },
   "sidebar": {
     "docs": [
