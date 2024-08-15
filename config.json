@@ -20,11 +20,15 @@
         "category": "Introduction",
         "pages": [
           "introduction/introduction",
+          "introduction/quickstart",
           {
-            "page": "introduction/quickstart",
-            "label": "Quickstart",
+            "page": "introduction/advanced-features",
+            "label": "Advanced Features",
             "pages": [
-              "introduction/advanced-features"
+              "introduction/advanced-features/accordions",
+              "introduction/advanced-features/callouts",
+              "introduction/advanced-features/cards",
+              "introduction/advanced-features/media"
             ]
           }
         ]
