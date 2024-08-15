@@ -1,26 +1,30 @@
 {
-  "websiteName": "Project Name",
+  "websiteName": "MyCompany Docs",
   "organizationName": "MyCompany",
-  "repositoryName": "my-repo-name",
+  "repositoryName": "mycompany-docs",
   "description": "Project Description",
   "images": {
     "logo": "img/logo.png",
     "favicon": "img/favicon.ico"
   },
   "styles": {
-    "mainColor": "#0029F5"
+    "mainColor": "#3778fd"
   },
+  "apiFiles": [
+    "example.yml"
+  ],
+  "homepage": "/introduction",
   "sidebar": {
     "docs": [
       {
-        "category": "Getting Started",
+        "category": "Introduction",
         "pages": [
-          "getting-started/introduction",
+          "introduction/introduction",
           {
-            "page": "getting-started/quickstart",
+            "page": "introduction/quickstart",
             "label": "Quickstart",
             "pages": [
-              "getting-started/advanced-features"
+              "introduction/advanced-features"
             ]
           }
         ]
@@ -30,14 +34,8 @@
       {
         "category": "Example",
         "pages": [
-          {
-            "page": "api-reference/example/get-items",
-            "apiMethod": "get"
-          },
-          {
-            "page": "api-reference/example/create-item",
-            "apiMethod": "post"
-          }
+          "reference/example/get-items",
+          "reference/example/create-item"
         ]
       }
     ]
