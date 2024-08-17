@@ -8,12 +8,28 @@
     "favicon": "img/favicon.ico"
   },
   "styles": {
-    "mainColor": "#3778fd"
+    "mainColor": "#3778fd",
+    "navbarColor": "#3778fd",
+    "pagination": false
   },
   "apiFiles": [
     "example.yml"
   ],
-  "homepage": "/introduction",
+  "homepage": "/reference/example/get-items",
+  "navbar": {
+    "Docs": "docs",
+    "API Reference": "apiReference",
+    "Guides": [
+      {
+        "label": "Docs",
+        "sidebarRef": "docs"
+      },
+      {
+        "label": "API",
+        "sidebarRef": "apiReference"
+      }
+    ]
+  },
   "sidebar": {
     "docs": [
       {
