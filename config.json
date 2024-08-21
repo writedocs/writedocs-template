@@ -9,21 +9,18 @@
   },
   "styles": {
     "mainColor": "#3778fd",
-    "navbarColor": "#3778fd",
+    "darkModeMainColor": "",
+    "navbarColor": "#000",
+    "navbarDarkModeColor": "#3778fd",
     "pagination": false
   },
   "apiFiles": [
     "example.yml"
   ],
-  "homepage": "/reference/example/get-items",
+  "homepage": "/introduction",
   "navbar": {
-    "Docs": "docs",
-    "API Reference": "apiReference",
-    "Guides": [
-      {
-        "label": "Docs",
-        "sidebarRef": "docs"
-      },
+    "Guides": "docs",
+    "Api Reference": [
       {
         "label": "API",
         "sidebarRef": "apiReference"
@@ -44,6 +41,7 @@
               "introduction/advanced-features/accordions",
               "introduction/advanced-features/callouts",
               "introduction/advanced-features/cards",
+              "introduction/advanced-features/codeblocks",
               "introduction/advanced-features/media"
             ]
           }
