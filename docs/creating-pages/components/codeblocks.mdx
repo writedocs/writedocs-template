@@ -1,0 +1,46 @@
+---
+id: codeblocks
+title: Codeblocks
+slug: /codeblocks
+description: Codeblocks description
+---
+
+Showcase your code with optional syntax highlighting, turning code blocks into powerful, visually engaging elements within your documentation.
+
+## Basic Code Block
+
+Enclose your code in triple backticks to create fenced code blocks.
+
+```json
+{
+  "id": 1,
+  "name": "Alice",
+  "active": true
+}
+```
+
+## Syntax Highlighting
+Add the name of your programming language after the triple backticks to enable syntax highlighting. WriteDocs uses Prism to highlight your code beautifully. Just pick your language, and you're good to go! 
+
+For a full list of supported languages, check out [Prism’s supported languages](https://prismjs.com/#supported-languages).
+
+```js 
+const axios = require('axios');
+
+let config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: 'https://api.example.com/v1/items',
+  headers: { 
+    'Accept': 'application/json'
+  }
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
+```

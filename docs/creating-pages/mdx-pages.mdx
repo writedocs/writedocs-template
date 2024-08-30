@@ -1,0 +1,68 @@
+---
+title: MDX Pages
+slug: /mdx-pages
+description: Learn how to make your documentation easy to navigate for users and optimized for search engines.
+---
+
+In your WriteDocs project, each page is an MDX file. To create MDX pages and display them on the sidebar, follow these steps:
+
+### Step 1. Create an MDX file
+Create an MDX file in your docs repository, such as `introduction.mdx`. You can also create folders with multiple MDX files to group related pages into a category.
+
+
+### Step 2. Set the header configuration
+Each MDX file begins with metadata enclosed between triple dashes (---) at the start and end.
+
+```yaml
+---
+title: Page Configuration
+slug: /page-configuration
+description: Learn how to make your documentation easy to navigate for users and optimized for search engines.
+---
+```
+
+#### Attributes 
+
+title <small className="small_tag"><code>string</code></small> <small className="required_tag"><code>required</code></small>
+The title that will appear on the page and sidebar. If you want the title on the page to differ from the sidebar, add it as a Heading 1.
+
+slug <small className="small_tag"><code>string</code></small>
+The page slug. If this attribute is not specified, WriteDocs will use the MDX page name along with the file path.
+
+description <small className="small_tag"><code>string</code></small>
+The page description used for SEO optimization.
+
+### Step 3. Refer the page on the **config.json**
+Reference the page in the sidebar object of the **config.json** file. As mentioned in the [Global Settings](global-settings/#sidebar), add the pages within the pages array of strings and/or objects, attaching them to a category inside the sidebarRef name.
+
+```json
+"sidebar": { // Define the different sidebars your docs can have (e.g, Guides and API Reference)
+    "docs": [ // The sidebarRef name referred in the navbar. Can be changed. 
+      {
+        "category": "Introduction", // Adds a category to the sidebar
+        "pages": [ // The pages in this category
+          "introduction/introduction", // The slugs for the pages in this category
+          "introduction/quickstart",
+          "introduction/global-settings",
+          { // An object will add a group of nested pages inside the category
+            "page": "introduction/components", // (Optional) Adds a page as the main link of this group of nested pages
+            "label": "Components", // Defines the name of the group of nested pages
+            "pages": [ // Adds pages to the group of nested pages
+              "introduction/components/accordions", 
+              "introduction/components/callouts",
+              "introduction/components/cards",
+              "introduction/components/codeblocks",
+              "introduction/components/media"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+```
+### Step 4. Commit the changes 
+Commit your changes to the main branch to see how your page looks at **[**yourcompanyname].docs.writedocs.io** 😃
+
+<Callout type="info" title="Preview (coming soon)">
+Our team is working hard to provide a CLI that will enable you to quickly preview your docs. For now, please wait about 2 minutes to see the changes in your portal. 
+</Callout>

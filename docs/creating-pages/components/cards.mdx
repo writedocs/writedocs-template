@@ -1,0 +1,87 @@
+---
+id: cards
+title: Cards
+slug: /cards
+description: Cards description
+---
+
+Improve user experience with by emphasizing key points or links using customizable icons and images. WriteChoice integrates with [Phospor Icons](https://phosphoricons.com/?q="") to provide you with a vast library of icons at hand, improving speed and style.
+
+<Card 
+  title="Attributes"
+  description="This example demonstrates how to use a card with an icon and a link. Clicking on the card will take you to the Attributes heading."
+  link="/cards/#attributes"
+  icon="cards"
+  iconType='duotone'
+  iconSize='32px'
+/>
+
+This is how you build a single card:
+
+```jsx
+<Card 
+  title="Attributes"
+  description="This example demonstrates how to use a card with an icon and a link. Clicking on the card will take you to the Attributes heading."
+  link="/cards/#attributes"
+  icon="cards"
+  iconType='duotone'
+  iconSize='32px'
+/>
+```
+
+## Attributes
+
+<strong>title</strong> <small className="small_tag"><code>string</code></small> <small className="required_tag"><code>required</code></small> 
+<br/>The title displayed on the card.
+
+<strong>description</strong> <small className="small_tag"><code>string</code></small>
+<br/>A brief explanation of the card's purpose and behavior, shown beneath the title.
+
+<strong>link</strong> <small className="small_tag"><code>string</code></small>
+<br/>The URL or path the Card links to when clicked.
+
+<strong>icon</strong> <small className="small_tag"><code>string</code></small> 
+<br/>The name of the icon displayed on the Card from the Phosphor Icons library, such as "address-book". 
+
+<strong>iconType</strong> <small className="small_tag"><code>string</code></small> 
+<br/>Specifies the weight (or style) of the icon. The possible values are: `thin`, `light`, `regular`, `bold`, `fill`, and `duotone`. Default: `regular`. 
+
+<strong>iconSize</strong> <small className="small_tag"><code>string</code></small> 
+<br/>Defines the size of the icon in px. The default value is 32px.
+
+
+## Card Groups
+
+Display cards side by side in a grid layout. The <code>&lt;CardList&gt;</code> component allows you to organize multiple <code>&lt;Card&gt;</code> components together, commonly used to align multiple cards within the same column.
+
+<CardList cols={4}>
+
+<Card 
+  title="Duotone Card"
+  icon="Book"
+  description="This card shows a book icon with duotone weight."
+  iconType='duotone'
+/>
+
+<Card 
+  title="Thin Card" 
+  icon="airplane"
+  description="This card shows an airplane icon with thin weight."
+  iconType='thin'
+/>
+
+<Card 
+  title="Regular Card" 
+  icon="alarm"
+  description="This card shows an alarm icon with regular weight."
+  iconType='regular'
+/>
+
+<Card 
+  title="Filled Card" 
+  icon="club"
+  description="This card shows a club icon with filled weight."
+  iconType='fill'
+/>
+
+</CardList>

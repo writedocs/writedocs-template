@@ -1,48 +1,68 @@
 {
-  "websiteName": "MyCompany Docs",
-  "organizationName": "MyCompany",
-  "repositoryName": "mycompany-docs",
-  "description": "Project Description",
+  "websiteName": "WriteDocs Documentation",
+  "description": "Explore our documentation to learn how to create beautiful, scalable developer portals with WriteDocs.",
   "images": {
     "logo": "img/logo.png",
-    "favicon": "img/favicon.ico"
+    "favicon": "img/favicon.ico",
+    "darkLogo": ""
   },
   "styles": {
-    "mainColor": "#3778fd",
-    "darkModeMainColor": "",
-    "navbarColor": "#000",
-    "navbarDarkModeColor": "#3778fd",
+    "mainColor": "#0029F5",
+    "darkModeMainColor": "#F0F0FF",
+    "navbarColor": "#000621",
+    "navbarDarkModeColor": "#000621",
     "pagination": false
   },
   "apiFiles": [
     "example.yml"
   ],
-  "homepage": "/introduction",
-  "navbar": {
-    "Guides": "docs",
-    "Api Reference": [
-      {
-        "label": "API",
-        "sidebarRef": "apiReference"
-      }
-    ]
-  },
+  "homepage": "/overview",
+  "navbar": [
+    {
+      "label": "Guides",
+      "sidebarRef": "docs"
+    },
+    {
+      "label": "API Reference",
+      "dropdown": [
+        {
+          "label": "v1.0",
+          "sidebarRef": "apiReference"
+        }
+      ]
+    }
+  ],
   "sidebar": {
     "docs": [
       {
-        "category": "Introduction",
+        "category": "Getting Started",
         "pages": [
-          "introduction/introduction",
-          "introduction/quickstart",
+          "getting-started/overview",
           {
-            "page": "introduction/advanced-features",
-            "label": "Advanced Features",
+            "page": "getting-started/quickstart/quickstart",
+            "label": "Quickstart",
             "pages": [
-              "introduction/advanced-features/accordions",
-              "introduction/advanced-features/callouts",
-              "introduction/advanced-features/cards",
-              "introduction/advanced-features/codeblocks",
-              "introduction/advanced-features/media"
+              "getting-started/quickstart/beginners-guide"
+            ]
+          },
+          "getting-started/global-settings"
+        ]
+      },
+      {
+        "category": "Creating Pages",
+        "pages": [
+          "creating-pages/mdx-pages",
+          "creating-pages/api-pages",
+          "creating-pages/markdown-basics",
+          {
+            "page": "creating-pages/components",
+            "label": "Components",
+            "pages": [
+              "creating-pages/components/accordions",
+              "creating-pages/components/callouts",
+              "creating-pages/components/cards",
+              "creating-pages/components/codeblocks",
+              "creating-pages/components/media"
             ]
           }
         ]

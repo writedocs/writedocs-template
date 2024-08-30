@@ -1,0 +1,83 @@
+---
+title: API Pages
+slug: /api-pages
+description: Learn how to make your documentation easy to navigate for users and optimized for search engines.
+---
+
+API pages enable you to create interactive playgrounds that enhance the developer experience. Developers can send requests and receive responses directly on each endpoint page, streamlining the integration process.
+
+WriteDocs uses OpenAPI Specification (OAS) files to generate endpoint pages, thus ensure you have a valid OpenAPI document in JSON or YAML format that adheres to the [OpenAPI 3.0+ specification](https://swagger.io/specification/).
+
+## Generating Endpoint Pages
+
+To generate API endpoint pages in the API reference tab, you need to follow just a few steps:
+
+### Step 1. Add the OAS file
+Add the OAS file to the **reference** folder in your documentation repository on GitHub. 
+
+<Callout type="success" title="Improving Endpoint Pages">
+To enhance the visual appeal and user experience of your endpoint pages, you can incorporate any [WriteDocs components](/components) into the endpoint `description` within your OpenAPI specification.
+</Callout>
+
+### Step 2. Link the OAS file to the `apiFile` of your config.json
+Specify the path to the OpenAPI file in the `apiFiles` attribute in the **config.json** file of your documentation repo, such as `"apiFiles": ["reference/example.yml"]`. You can add multiple OAS files as needed. 
+
+### Step 3. Reference the endpoints in the sidebar of your config.json
+Define the paths to each endpoint in the [sidebar object](global-settings/#sidebar) of the **config.json** file following the standard of the example below:
+
+
+<Tabs>
+  <TabItem value="template" label="Template" default>
+    ```json
+    "apiReference": [
+      {
+        "category": "Template",
+        "pages": [
+          "reference/[OAS-file-name]/[endpoint-operation-id]"
+        ]
+      }
+    ]
+```
+  </TabItem>
+  <TabItem value="example" label="Example">
+    ```json
+    "apiReference": [
+      {
+        "category": "MANAGE PAYMENTS",
+        "pages": [
+          "reference/payments/create-payment",
+          "reference/payments/retrieve-payment",
+          "reference/payments/capture-payment"
+        ]
+      }
+    ]
+```
+  </TabItem>
+</Tabs>
+
+    - `[OAS-file-name]`: The name of the OAS file contained in the **reference** folder. 
+    - `[endpoint-operation-id]`: In the OAS file, each endpoint must have an `operationId`. This attribute will be used as the final path of the endpoint slug added to the `apiReference` array. The following code block presents where this parameter is usually locate inside the OAS file. 
+
+```yaml
+openapi: 3.0.0
+info:
+  title: Example API
+  description: This is an example API to demonstrate a GET and POST endpoint.
+  version: 1.0.0
+servers:
+  - url: https://api.example.com/v1
+paths:
+  /items:
+    get:
+      summary: Get list of items
+      operationId: get-items #Attribute you need to reference in the slug.
+      description: |
+        Retrieves a list of items.
+```
+
+### Step 4. Commit the Changes 
+Commit your changes to the main branch to see how your endpoint pages look at **[**yourcompanyname].docs.writedocs.io** 😃
+
+<Callout type="info" title="Preview (coming soon)">
+Our team is working hard to provide a CLI that will enable you to quickly preview your docs. For now, please wait about 2 minutes to see the changes in your portal. 
+</Callout>

@@ -1,0 +1,43 @@
+---
+id: media
+title: Media
+slug: /media
+description: media description
+---
+
+Use media components to add images, GIFs, or videos to your documentation. These files need to be added to the "img" folder in your documentation repository. 
+
+## Images
+Use the <code>&lt;Image&gt;</code> component to visually enhance your content by adding relevant images. You can easily include images by specifying the source file with the src attribute. This example shows an image located at img/customers.png.
+
+<Image src="img/customers.png"/>
+
+The image component also allows you to control the images size, and add a different image for darkmode. Use the following properties for each:
+
+- `srcDark` (optional): This property allows you to add another image to be loaded when the site is in darkmode.
+- `size`(optional): This property gives you control of the images presentation. Defining its size in pixels or percentage. 
+
+This is how you can add images, with its different properties: 
+```jsx
+<Image src="img/customers.gif" size="300px"/>
+// or
+<Image 
+  src="https://image-directory.com/customers.png" 
+  srcDark="https://image-directory.com/customers-dark.png"
+  size="80%"
+/>
+```
+
+## Videos
+The <code>&lt;Video&gt;</code> component is used to embed videos within your documentation. You can include videos from external sources like YouTube or from local files by specifying the source with the `src` attribute. Additionally, you can adjust the spacing around the video using the `margin` attribute.
+
+<Video src="https://www.youtube.com/embed/dQw4w9WgXcQ" margin={50} />
+<Video src="img/paylink1.mp4" margin={50} />
+
+This is how you can add videos: 
+
+```jsx
+<Video src="https://www.youtube.com/embed/dQw4w9WgXcQ" margin={50} />
+//or
+<Video src="img/paylink1.mp4" margin={50} />
+```

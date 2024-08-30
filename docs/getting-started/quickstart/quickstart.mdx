@@ -1,0 +1,56 @@
+---
+title: Quickstart
+slug: /quickstart
+description: quickstart description
+---
+
+Create beautiful, scalable documentation portals in minutes. 
+
+<Image src="img/Mockup_WriteDocs_Light.png" srcDark="img/Mockup_WriteDocs_Dark.png"/>
+
+
+## Getting Started
+Welcome to the WriteDocs documentation guide. Follow the instructions below to learn how to create, deploy, and take your documentation to the highest level with WriteDocs.
+
+### Requirements
+WriteDocs uses GitHub to integrate your docs with your code, and make source control effortless. Therefore, make sure you have the following requirements checked before getting started:
+- [x] GitHub account
+- [x] GitHub organization
+- [x] Code editor, such as Visual Studio Code. 
+
+### Step 1: Create a repository from the WriteDocs template on GitHub
+
+Start by creating a new repository in your GitHub organization using the [WriteDocs Template](https://github.com/WriteDocs/WriteDocs-template) provided on GitHub. When creating the repository, use the **`[yourcompanyname]-docs`** standard to define the repository name. This will give you a structured starting point to build your documentation quickly.
+
+<Video src="videos/quickstart-step1.mp4"/>
+
+### Step 2: Connect your repository to the WriteDocs app
+
+Once your documentation repository is created, follow the steps below to connect the [WriteDocs App](https://github.com/apps/WriteDocs-app) to this repository. This connection ensures that WriteDocs automatically generates and deploys your documentation.
+1. Access the [WriteDocs App](https://github.com/apps/WriteDocs-app) on GitHub.
+2. Click **Install**.
+3. Select **Only select repositories** and look for the documentation repository created in Step 1. 
+
+<Video src="videos/quickstart-step2.mp4"/>
+
+With these simple steps, WriteDocs will automatically deploy your documentation.
+
+### Step 3: Access your documentation
+
+Intially, your documentation will be available at **`[yourcompanyname].docs.writedocs.io`**, using the WriteDocs subdomain. 
+
+<Callout type="info" title="Custom Domain">
+If you are in the Pro plan, you can add a custom domain to your documentation. For additional information, send and email to integration@writechoice.io and our team will be happy to help you set up your custom domain.
+</Callout>
+
+### Step 4: Customize your documentation (config.json)
+
+WriteDocs provides you with a `config.json` file in your documentation repository where you can quickly customize the appearance and structure of your documentation. You can find more information about setting up this file on the [Global Settings](/global-settings) page. 
+
+### Step 5: Update your documentation
+
+When you push changes to the `main` branch, WriteDocs will automatically update and deploy your documentation.
+
+<Callout type="info" title="Beginners Guide">
+If you don't have much experience in contributing to GitHub projects or using a doc-as-code approach, you can check our [Beginners Guide](/beginners-guide) that covers the basics of working with Git and using a code editor to create docs. 
+</Callout>

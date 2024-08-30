@@ -1,0 +1,73 @@
+---
+id: callouts
+title: Callouts
+slug: /callouts
+description: callouts description
+---
+
+Enhance your content with eye-catching callouts to provide important context. Each callout type is designed to convey a specific tone and importance level, making it easier for users to grasp key points at a glance.
+
+## Attributes
+
+<strong>type</strong> <small className="small_tag"><code>string</code></small> <small className="required_tag"><code>required</code></small>
+
+The type of Callout to be used, including: `info`, `success`, `warning`, `danger`, and custom.  
+
+<strong>title</strong> <small className="small_tag"><code>string</code></small> <small className="required_tag"><code>required</code></small>
+<br/>Title displayed in the Callout preview.
+
+<strong>description</strong> <small><code>string</code></small>
+<br/>Detail text displayed below the title in the Callout preview.
+
+## Callout Types
+### Info 
+Use the Info Callout to highlight important information that is neutral or instructional.
+
+<Callout type="info" title="Info">
+This adds an Info Callout to the content. 
+</Callout>
+
+```jsx
+<Callout type="info" title="Info">
+This adds an Info Callout to the content. 
+</Callout>
+```
+
+### Success
+Use the Success Callout to share helpful tips or best practices that can assist users.
+
+<Callout type="success" title="Success">
+This adds a Success Callout to the content. 
+</Callout>
+
+```jsx
+<Callout type="success" title="Success">
+This adds a Success Callout to the content. 
+</Callout>
+```
+
+### Warning 
+Use the Warning Callout to alert users about potential issues or important cautions.
+
+<Callout type="warning" title="Warning">
+This adds a Warning Callout to the content. 
+</Callout>
+
+```jsx
+<Callout type="warning" title="Warning">
+This adds a Warning Callout to the content. 
+</Callout>
+```
+
+### Danger 
+Use the Danger Callout to emphasize critical warnings or risks that require immediate attention.
+
+<Callout type="danger" title="Danger">
+This adds a Warning Callout to the content. 
+</Callout>
+
+```jsx
+<Callout type="danger" title="Danger">
+This adds a Danger Callout to the content. 
+</Callout>
+```
