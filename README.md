@@ -23,7 +23,7 @@ The WriteDocs template includes all the essential components to deploy your docu
 |-- config.json
 |-- home.html
 |-- openapi/
-|-- img/
+|-- media/
 |-- docs/
 ```
 
@@ -35,7 +35,7 @@ The table below provides instructions on how to use each file and directory avai
 | `home.html`        | WriteDocs uses the content from this file to generate the homepage of your documentation.                                                                                              |
 | `docs/`            | Place all [MDX](https://mdxjs.com/) files in this directory to generate your documentation pages. Organize the files according to the desired structure of your documentation sidebar. |
 | `openapi/`         | Upload your OpenAPI files here to generate interactive API pages where customers can test your APIs.                                                                                   |
-| `img/`             | Store all images used in your documentation in this directory. You can reference these images when writing your documentation.                                                         |
+| `media/`           | Store all images used in your documentation in this directory. You can reference these images when writing your documentation.                                                         |
 
 ## Explore Additional Features
 

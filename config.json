@@ -2,8 +2,8 @@
   "websiteName": "WriteDocs Documentation",
   "description": "Explore our documentation to learn how to create beautiful, scalable developer portals with WriteDocs.",
   "images": {
-    "logo": "img/logo.png",
-    "favicon": "img/favicon.ico",
+    "logo": "media/logo.png",
+    "favicon": "media/favicon.ico",
     "darkLogo": ""
   },
   "styles": {
