@@ -11,6 +11,7 @@ Showcase your code with optional syntax highlighting, turning code blocks into p
 
 Enclose your code in triple backticks to create fenced code blocks.
 
+````md
 ```json
 {
   "id": 1,
@@ -18,12 +19,14 @@ Enclose your code in triple backticks to create fenced code blocks.
   "active": true
 }
 ```
+````
 
 ## Syntax Highlighting
 Add the name of your programming language after the triple backticks to enable syntax highlighting. WriteDocs uses Prism to highlight your code beautifully. Just pick your language, and you're good to go! 
 
 For a full list of supported languages, check out [Prism’s supported languages](https://prismjs.com/#supported-languages).
 
+````md
 ```js 
 const axios = require('axios');
 
@@ -44,3 +47,4 @@ axios.request(config)
   console.log(error);
 });
 ```
+````

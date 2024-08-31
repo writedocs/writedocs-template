@@ -4,7 +4,7 @@ slug: /global-settings
 description: Learn how to customize and structure your documentation. 
 ---
 
-Every WriteDocs documentation site requires a **config.json** file to handle the essential configuration settings. Explore the available attributes below to get started.
+Every WriteDocs documentation site requires a **`config.json`** file to handle the essential configuration settings. Explore the available attributes below to get started.
 
 If you prefer to learn by example and then reference the attributes as needed for a deeper understanding, check out this [full example](#full-example).
 
@@ -17,8 +17,11 @@ If you prefer to learn by example and then reference the attributes as needed fo
 <p>A brief description of your project or documentation site. This description will be used in metadata for SEO and sharing purposes.</p>
 
 ```json
-  "websiteName": "MyCompany Docs", // Your website's name
-  "description": "Project Description", // a Short description of your site for metadata
+  {
+    "websiteName": "MyCompany Docs", // Your website's name
+    "description": "Project Description", // a Short description of your site for metadata
+    ...
+  }
 ```
 
 ## Branding
@@ -40,11 +43,15 @@ If you prefer to learn by example and then reference the attributes as needed fo
 </ul>
 
 ```json
+{
+  ...
   "images": {
     "logo": "img/logo.png", // Company's logo
     "favicon": "img/favicon.ico", // Site favicon. Needs to be in .ico format
     "darkLogo": "" // (Optional) Company's logo for darkmode
   },
+  ...
+}
 ```
 
 <strong>styles</strong> <small className="small_tag"><code>object</code></small>  <small className="required_tag"><code>required</code></small>
@@ -78,6 +85,8 @@ If you prefer to learn by example and then reference the attributes as needed fo
 
 
 ```json
+{
+    ...
   "styles": {
     "mainColor": "#3778fd", // Company's primary color
     "darkModeMainColor": "", // (Optional) Company's darkmode primary color 
@@ -85,6 +94,8 @@ If you prefer to learn by example and then reference the attributes as needed fo
     "navbarDarkModeColor": "#3778fd", // (Optional) Darkmode color for the website navigation bar
     "pagination": false // (Optional) Define whether to show pagination links at bottom of pages
   },
+  ...
+}
 ```
 
 ## API Reference
@@ -92,9 +103,13 @@ If you prefer to learn by example and then reference the attributes as needed fo
 <p>A list of paths to your API definition files, usually in YAML format. These files define the API endpoints, parameters, and responses, and are used to generate API reference documentation.</p>
 
 ```json
+{
+  ...
   "apiFiles": [ // Add the OpenAPI files to generate the API Reference pages
     "example.yml"
   ],
+  ...
+}
 ```
 
 ## Home Page
@@ -102,14 +117,29 @@ If you prefer to learn by example and then reference the attributes as needed fo
 <p>The path to your homepage file. This is the landing page users see when they visit your documentation site.</p>
 
 ```json
+{
+  ...
   "homepage": "/introduction", // Defines a home page for your docs. It can either be a page's slug or the homepage.html file
-  //or 
+  // or 
   "homepage": "homepage.html", 
+}
 ```
 
 <Callout type="info" title="Info">
 The home page feature is only available starting from the Pro Plan. 
 </Callout>
+
+## Changelog
+
+<strong>changelog</strong> <small className="small_tag"><code>boolean</code></small> 
+<p>A optional parameter to add a changelog tab to your documentation.</p>
+
+```json
+{
+  ...
+  "changelog": false, 
+}
+```
 
 ## Navigation
 <strong>navbar</strong> <small className="small_tag"><code>array of objects</code></small> <small className="required_tag"><code>required</code></small>
@@ -143,7 +173,9 @@ The home page feature is only available starting from the Pro Plan.
 </ul>
 
 ```json
-"navbar": [ // Defines the tabs of your navbar
+{
+  ...
+  "navbar": [ // Defines the tabs of your navbar
     { // An object with a single label and sidebarRef becomes tab w/o dropdown
       "label": "Guides", // Label that is displayed for this tab on the sidebar
       "sidebarRef": "docs" // Attribute that will be refered in the sidebar configuration
@@ -158,61 +190,53 @@ The home page feature is only available starting from the Pro Plan.
       ]
     }
   ],
+  ...
+}
 ```
 
-<Accordion title="navbar object for multi-product documentation">
-If you are using a multiproduct approach for your documentation, ensure that you include a `Products` array within the navbar configuration. Each product should have its own `label` and `sidebarRef` to correctly link the navigation bar to the appropriate product sections. Here's an example:
+## External links
 
-```json
-"navbar": [
-  {
-    "label": "Guides",
-    "dropdown": [
-      {
-        "label": "Product A",
-        "sidebarRef": "docs_productA"
-      },
-      {
-        "label": "Product B",
-        "sidebarRef": "docs_productB"
-      }
-    ]
-  },
-  {
-    "label": "API Reference",
-    "dropdown": [
-      {
-        "label": "Product A",
-        "sidebarRef": "apiReference_productA"
-      },
-      {
-        "label": "Product B",
-        "sidebarRef": "apiReference_productB"
-      }
-    ]
-  }
-]
-```
-
-</Accordion>
-
-## Sidebar
-<strong>sidebar</strong> <small className="small_tag"><code>object</code></small> <small className="required_tag"><code>required</code></small>
-<p>Defines the structure of the sidebar, where users navigate the documentation content. Each key represents a section, and the associated value is an array of categories and pages.</p>
-
-<strong>[your-sidebarRef]</strong> <small className="small_tag"><code>array of objects</code></small> <small className="required_tag"><code>required</code></small>
-<p>The WriteDocs template provides `"docs"` and `"apiReference"` as the default values for this array of objects. However, you can change this attribute as needed; just remember to refer it in the `sidebarRef` on the [navbar configuration](#navigation). </p>
+<strong>externalLinks</strong> <small className="small_tag"><code>array of objects</code></small>
+<p>Writedocs allows you to add up to 2 external links in the right side of the navigation bar with this array.</p>
 
 The objects inside this array will be composed of the following attributes:
 <ul>
   <li>
-    <strong>category</strong> <small className="small_tag"><code>string</code></small> <small className="required_tag"><code>required</code></small>
+  <strong>link</strong> <small className="small_tag"><code>string</code></small> <small className="required_tag"><code>required</code></small>
+  <br/>The link to redirect the user when they click this button.
+  </li>
+
+  <li>
+    <strong>name</strong> <small className="small_tag"><code>string</code></small> <small className="required_tag"><code>required</code></small>
+    <br/>The button name to be shown in the documentation.
+  </li>
+</ul>
+
+
+## Sidebars
+<strong>sidebars</strong> <small className="small_tag"><code>array of objects</code></small> <small className="required_tag"><code>required</code></small>
+<p>Defines the structure of the sidebar, where users navigate the documentation content. Each object represents a different sidebar.</p>
+
+The objects inside this array will be composed of the following attributes:
+
+<ul>
+  <li>
+  <strong>sidebarRef</strong> <small className="small_tag"><code>string</code></small> <small className="required_tag"><code>required</code></small>
+  <br/>The sidebar reference name. This value is used to connect a [navbar](#navigation) link to this sidebar item. The WriteDocs template provides `"docs"` and `"apiReference"` as the default values for these objects. However, you can change this attribute as needed.
+  </li>
+
+  <li>
+    <strong>categoryName</strong> <small className="small_tag"><code>string</code></small> <small className="required_tag"><code>required</code></small>
     <br/>The name of the category under which pages are grouped.
   </li>
 
   <li>
     <strong>pages</strong> <small className="small_tag"><code>array of strings</code> or/and <code>array of objects</code></small> <small className="required_tag"><code>required</code></small>
     <br/>A list of paths to the markdown files representing the pages under the category. It can can also include groups of nested pages.
+
+    <Callout type="warning" title="How to define a new page in the sidebar object">
+    A new page is referenced in the sidebar object by adding the relative path to the respective page 
+    </Callout>
   </li>
     <ul>
         <li>
@@ -221,14 +245,14 @@ The objects inside this array will be composed of the following attributes:
         </li>
 
         <li>
-        <strong>label</strong> <small className="small_tag"><code>string</code></small> <small className="required_tag"><code>required</code></small>
+        <strong>groupName</strong> <small className="small_tag"><code>string</code></small> <small className="required_tag"><code>required</code></small>
         <br/>The label to be displayed on the sidebar for a group nested pages.
-       </li>
+        </li>
 
-       <li>
-        <strong>pages</strong> <small className="small_tag"><code>array of strings</code> or/and <code>array of objects</code></small> <small className="required_tag"><code>required</code></small>
-        <br/>A list of paths to the markdown files for the pages inside the group of nested pages. It can can also include more groups of nested pages.
-      </li>
+        <li>
+          <strong>subpages</strong> <small className="small_tag"><code>array of strings</code> or/and <code>array of objects</code></small> <small className="required_tag"><code>required</code></small>
+          <br/>A list of paths to the markdown files for the pages inside the group of nested pages. It can can also include more groups of nested pages.
+        </li>
       </ul>
 </ul>
 
@@ -237,65 +261,31 @@ The presentation order of the pages and endpoints on the sidebar will follow the
 </Callout>
 
 ```json
-"sidebar": { // Define the different sidebars your docs can have (e.g, Guides and API Reference)
-    "docs": [ // The sidebarRef name referred in the navbar. Can be changed. 
-      {
-        "category": "Introduction", // Adds a category to the sidebar
-        "pages": [ // The pages in this category
-          "introduction/introduction", // The slugs for the pages in this category
-          "introduction/quickstart",
-          "introduction/global-settings",
-          { // An object will add a group of nested pages inside the category
-            "page": "introduction/components", // (Optional) Adds a page as the main link of this group of nested pages
-            "label": "Components", // Defines the name of the group of nested pages
-            "pages": [ // Adds pages to the group of nested pages
-              "introduction/components/accordions", 
-              "introduction/components/callouts",
-              "introduction/components/cards",
-              "introduction/components/codeblocks",
-              "introduction/components/media"
-            ]
-          }
-        ]
-      }
-    ],
-    "apiReference": [
-      {
-        "category": "Example",
-        "pages": [
-          "reference/example/get-items",
-          "reference/example/create-item"
-        ]
-      }
-    ]
-  }
-```
-
-<Accordion title="sidebar object for multi-product documentation">
-   When using a multiproduct approach, ensure that each product in your documentation has its own entry in the sidebar configuration. The key for each product (e.g., "productA", "productB") should match the `sidebarRef` used in the navbar configuration. Here's an example of how to structure your sidebar for multiple products:
-```json
-"sidebar": {
-  "docs_productA": [
+{
+  ...
+  "sidebars": [ 
     {
-      "category": "Introduction",
-      "pages": [
-        "productA/introduction/nayax-sdk"
-      ]
-    },
-  ],
-  "docs_productB": [
-    {
-      "category": "Product B API",
-      "pages": [
-        "reference/productB/api/add-actor-group",
-        "reference/productB/api/delete-actor-group"
+      "sidebarRef": "guides",
+      "categories": [
+        {
+          "categoryName": "Getting Started",
+          "pages": [
+            "getting-started/overview",
+            { 
+              "page": "getting-started/quickstart/quickstart",
+              "groupName": "Quickstart",
+              "subpages": [
+                "getting-started/quickstart/beginners-guide"
+              ]
+            },
+            "getting-started/global-settings"
+          ]
+        }
       ]
     }
   ]
 }
 ```
-
-</Accordion>
 
 ## Full Example 
 ```json
@@ -318,6 +308,7 @@ The presentation order of the pages and endpoints on the sidebar will follow the
     "example.yml"
   ],
   "homepage": "/introduction", // Defines a home page for your docs. Can either be a page's slug or the homepage.html file
+  "changelog": true, // Defines whether to add a changelog to the documentation
   "navbar": [ // Defines the tabs of your navbar
     { // An object with a single label and sidebarRef becomes tab w/o dropdown
       "label": "Guides", // Label that is displayed for this tab on the sidebar
@@ -333,37 +324,63 @@ The presentation order of the pages and endpoints on the sidebar will follow the
       ]
     }
   ],
-  "sidebar": { // Define the different sidebars your docs can have (e.g, Guides and API Reference)
-    "docs": [ // The sidebarRef name referred in the navbar. Can be changed. 
-      {
-        "category": "Introduction", // Adds a category to the sidebar
-        "pages": [ // The pages in this category
-          "introduction/introduction", // The slugs for the pages in this category
-          "introduction/quickstart",
-          "introduction/global-settings",
-          { // An object will add a group of nested pages inside the category
-            "page": "introduction/components", // (Optional) Adds a page as the main link of this group of nested pages
-            "label": "Components", // Defines the name of the group of nested pages
-            "pages": [ // Adds pages to the group of nested pages
-              "introduction/components/accordions", 
-              "introduction/components/callouts",
-              "introduction/components/cards",
-              "introduction/components/codeblocks",
-              "introduction/components/media"
-            ]
-          }
-        ]
-      }
-    ],
-    "apiReference": [
-      {
-        "category": "Example",
-        "pages": [
-          "reference/example/get-items",
-          "reference/example/create-item"
-        ]
-      }
-    ]
-  }
+  "externalLinks": [ // Add up to two links to the right side of the navbar
+    {
+      "link": "https://github.com/orgs/writedocs/repositories", // the external link to redirect the user
+      "name": "Github" // the name to be shown at the navbar
+    }
+  ],
+  "sidebars": [ // Define the different sidebars your docs can have (e.g, Guides and API Reference)
+    {
+      "sidebarRef": "guides", // The name of the sidebar. Referred in the navbar definition as sidebarRef.
+      "categories": [
+        {
+          "categoryName": "Getting Started", // The name of the category of the current sidebar
+          "pages": [ // The pages in this category
+            "getting-started/overview", // The slugs for the pages in this category
+            { // An object will add a group of nested pages inside the category
+              "page": "getting-started/quickstart/quickstart", // (Optional) Adds a page as the main link of this group of nested pages
+              "groupName": "Quickstart", // Defines the name of the group of nested pages
+              "subpages": [ // Adds pages to the group of nested pages
+                "getting-started/quickstart/beginners-guide"
+              ]
+            },
+            "getting-started/global-settings"
+          ]
+        },
+        {
+          "categoryName": "Creating Pages",
+          "pages": [
+            "creating-pages/mdx-pages",
+            "creating-pages/api-pages",
+            "creating-pages/markdown-basics",
+            {
+              "page": "creating-pages/components",
+              "groupName": "Components",
+              "subpages": [
+                "creating-pages/components/accordions",
+                "creating-pages/components/callouts",
+                "creating-pages/components/cards",
+                "creating-pages/components/codeblocks",
+                "creating-pages/components/media"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "apiReference",
+      "categories": [
+        {
+          "categoryName": "Example",
+          "pages": [
+            "reference/example/get-items",
+            "reference/example/create-item"
+          ]
+        }
+      ]
+    }
+  ]
 }
 ```

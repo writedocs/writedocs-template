@@ -17,10 +17,11 @@
     "example.yml"
   ],
   "homepage": "/overview",
+  "changelog": false,
   "navbar": [
     {
       "label": "Guides",
-      "sidebarRef": "docs"
+      "sidebarRef": "guides"
     },
     {
       "label": "API Reference",
@@ -32,50 +33,62 @@
       ]
     }
   ],
-  "sidebar": {
-    "docs": [
-      {
-        "category": "Getting Started",
-        "pages": [
-          "getting-started/overview",
-          {
-            "page": "getting-started/quickstart/quickstart",
-            "label": "Quickstart",
-            "pages": [
-              "getting-started/quickstart/beginners-guide"
-            ]
-          },
-          "getting-started/global-settings"
-        ]
-      },
-      {
-        "category": "Creating Pages",
-        "pages": [
-          "creating-pages/mdx-pages",
-          "creating-pages/api-pages",
-          "creating-pages/markdown-basics",
-          {
-            "page": "creating-pages/components",
-            "label": "Components",
-            "pages": [
-              "creating-pages/components/accordions",
-              "creating-pages/components/callouts",
-              "creating-pages/components/cards",
-              "creating-pages/components/codeblocks",
-              "creating-pages/components/media"
-            ]
-          }
-        ]
-      }
-    ],
-    "apiReference": [
-      {
-        "category": "Example",
-        "pages": [
-          "reference/example/get-items",
-          "reference/example/create-item"
-        ]
-      }
-    ]
-  }
+  "externalLinks": [
+    {
+      "link": "https://github.com/orgs/writedocs/repositories",
+      "name": "Github"
+    }
+  ],
+  "sidebars": [
+    {
+      "sidebarRef": "guides",
+      "categories": [
+        {
+          "categoryName": "Getting Started",
+          "pages": [
+            "getting-started/overview",
+            {
+              "page": "getting-started/quickstart/quickstart",
+              "groupName": "Quickstart",
+              "subpages": [
+                "getting-started/quickstart/beginners-guide"
+              ]
+            },
+            "getting-started/global-settings"
+          ]
+        },
+        {
+          "categoryName": "Creating Pages",
+          "pages": [
+            "creating-pages/mdx-pages",
+            "creating-pages/api-pages",
+            "creating-pages/markdown-basics",
+            {
+              "page": "creating-pages/components",
+              "groupName": "Components",
+              "subpages": [
+                "creating-pages/components/accordions",
+                "creating-pages/components/callouts",
+                "creating-pages/components/cards",
+                "creating-pages/components/codeblocks",
+                "creating-pages/components/media"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "apiReference",
+      "categories": [
+        {
+          "categoryName": "Example",
+          "pages": [
+            "reference/example/get-items",
+            "reference/example/create-item"
+          ]
+        }
+      ]
+    }
+  ]
 }
