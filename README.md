@@ -21,8 +21,8 @@ The WriteDocs template includes all the essential components to deploy your docu
 
 ```
 |-- config.json
-|-- home.html
-|-- openapi/
+|-- homepage.html
+|-- reference/
 |-- media/
 |-- docs/
 ```
@@ -32,9 +32,9 @@ The table below provides instructions on how to use each file and directory avai
 | **File/Directory** | **Description**                                                                                                                                                                        |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `config.json`      | All configurations and customizations of your documentation portal are done through this file. Customize appearance, navbar and sidebar structures, colors, and logos here.            |
-| `home.html`        | WriteDocs uses the content from this file to generate the homepage of your documentation.                                                                                              |
+| `homepage.html`        | WriteDocs uses the content from this file to generate the homepage of your documentation.                                                                                              |
 | `docs/`            | Place all [MDX](https://mdxjs.com/) files in this directory to generate your documentation pages. Organize the files according to the desired structure of your documentation sidebar. |
-| `openapi/`         | Upload your OpenAPI files here to generate interactive API pages where customers can test your APIs.                                                                                   |
+| `reference/`         | Upload your OpenAPI files here to generate interactive API pages where customers can test your APIs.                                                                                   |
 | `media/`           | Store all images used in your documentation in this directory. You can reference these images when writing your documentation.                                                         |
 
 ## Explore Additional Features
