@@ -1,7 +1,7 @@
 import React from "react";
-import "./Greeting.css";
+import "./myCustomComponent.css";
 
-function Greeting({ name }) {
+function MyCustomComponent({ name }) {
   return (
     <div className="example-card">
       <h1 className="card-title">Hello, {name}!</h1>
@@ -10,4 +10,4 @@ function Greeting({ name }) {
   );
 }
 
-export default Greeting;
+export default MyCustomComponent;
