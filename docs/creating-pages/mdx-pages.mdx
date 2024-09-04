@@ -4,6 +4,7 @@ slug: /mdx-pages
 description: Learn how to make your documentation easy to navigate for users and optimized for search engines.
 ---
 
+
 In your WriteDocs project, each page is an MDX file. To create MDX pages and display them on the sidebar, follow these steps:
 
 ### Step 1. Create an MDX file
@@ -33,7 +34,7 @@ description: Learn how to make your documentation easy to navigate for users and
 <br/>The page description used for SEO optimization.
 
 ### Step 3. Refer the page on the **config.json**
-Reference the page in the sidebar object of the **config.json** file. As mentioned in the [Global Settings](global-settings/#sidebar), add the pages within the pages array of strings and/or objects, attaching them to a category inside the sidebarRef name.
+Reference the page in the sidebar object of the **config.json** file. As mentioned in the [Global Settings](global-settings/#sidebars), add the pages within the pages array of strings and/or objects, attaching them to a category inside the sidebarRef name.
 
 ```json
 {
@@ -62,7 +63,12 @@ Reference the page in the sidebar object of the **config.json** file. As mention
 }
 ```
 ### Step 4. Commit the changes 
-Commit your changes to the main branch to see how your page looks at **[**yourcompanyname].docs.writedocs.io** 😃
+Commit your changes to the main branch to see how your page looks. To see your docs, follow the example below:
+
+|Repository name | Documentation URL |
+|:--------|:-------|
+| `myCompany-docs` | [myCompany.docs.writedocs.io](http://mycompany.docs.writedocs.io/) |
+| `docs-myCompany` | [myCompany.docs.writedocs.io](http://mycompany.docs.writedocs.io/) |
 
 <Callout type="info" title="Preview (coming soon)">
 Our team is working hard to provide a CLI that will enable you to quickly preview your docs. For now, please wait about 2 minutes to see the changes in your portal. 

@@ -4,6 +4,7 @@ slug: /api-pages
 description: Learn how to make your documentation easy to navigate for users and optimized for search engines.
 ---
 
+
 API pages enable you to create interactive playgrounds that enhance the developer experience. Developers can send requests and receive responses directly on each endpoint page, streamlining the integration process.
 
 WriteDocs uses OpenAPI Specification (OAS) files to generate endpoint pages, thus ensure you have a valid OpenAPI document in JSON or YAML format that adheres to the [OpenAPI 3.0+ specification](https://swagger.io/specification/).
@@ -23,7 +24,7 @@ To enhance the visual appeal and user experience of your endpoint pages, you can
 Specify the path to the OpenAPI file in the `apiFiles` attribute in the **config.json** file of your documentation repo, such as `"apiFiles": ["reference/example.yml"]`. You can add multiple OAS files as needed. 
 
 ### Step 3. Reference the endpoints in the sidebar of your config.json
-Define the paths to each endpoint in the [sidebar object](global-settings/#sidebar) of the **config.json** file following the standard of the example below:
+Define the paths to each endpoint in the [sidebar object](global-settings/#sidebars) of the **config.json** file following the standard of the example below:
 
 
 <Tabs>
@@ -76,7 +77,13 @@ paths:
 ```
 
 ### Step 4. Commit the Changes 
-Commit your changes to the main branch to see how your endpoint pages look at **[**yourcompanyname].docs.writedocs.io** 😃
+
+Commit your changes to the main branch to see how your endpoint pages look. To see your docs, follow the example below:
+
+|Repository name | Documentation URL |
+|:--------|:-------|
+| `myCompany-docs` | [myCompany.docs.writedocs.io](http://mycompany.docs.writedocs.io/) |
+| `docs-myCompany` | [myCompany.docs.writedocs.io](http://mycompany.docs.writedocs.io/) |
 
 <Callout type="info" title="Preview (coming soon)">
 Our team is working hard to provide a CLI that will enable you to quickly preview your docs. For now, please wait about 2 minutes to see the changes in your portal. 

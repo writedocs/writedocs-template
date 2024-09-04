@@ -5,10 +5,11 @@ slug: /media
 description: media description
 ---
 
-Use media components to add images, GIFs, or videos to your documentation. These files need to be added to the "img" folder in your documentation repository. 
+
+Use media components to add images, GIFs, or videos to your documentation. These files need to be added to the "media" folder in your documentation repository. 
 
 ## Images
-Use the <code>&lt;Image&gt;</code> component to visually enhance your content by adding relevant images. You can easily include images by specifying the source file with the src attribute. This example shows an image located at media/customers.png.
+Use the <code>&lt;Image&gt;</code> component to visually enhance your content by adding relevant images. You can easily include images by specifying the source file with the src attribute. This example shows an image located at `media/customers.png`.
 
 <Image src="media/customers.png"/>
 
@@ -35,12 +36,14 @@ This is how you can add images, with its different properties:
 The <code>&lt;Video&gt;</code> component is used to embed videos within your documentation. You can include videos from external sources like YouTube or from local files by specifying the source with the `src` attribute. Additionally, you can adjust the spacing around the video using the `margin` attribute.
 
 <Video src="https://www.youtube.com/embed/dQw4w9WgXcQ" margin={50} />
-<Video src="media/paylink1.mp4" margin={50} />
+<Video src="media/quickstart-step1.mp4" margin={50} />
 
 This is how you can add videos: 
 
 ```jsx
 <Video src="https://www.youtube.com/embed/dQw4w9WgXcQ" margin={50} />
+
 //or
+
 <Video src="media/paylink1.mp4" margin={50} />
 ```

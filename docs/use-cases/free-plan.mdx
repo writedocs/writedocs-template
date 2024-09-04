@@ -1,0 +1,59 @@
+---
+title: Free Plan
+slug: /free-plan
+description: Free Plan description
+---
+
+
+WriteDocs Free plan allows you to have only one sidebar, and this sidebar will always be named API Reference. The `config.json` below exemplifies the configuration of a free plan documentation in our solution:
+
+```json title=config.json
+{
+  "websiteName": "WriteDocs Documentation",
+  "description": "Explore our documentation to learn how to create beautiful, scalable developer portals with WriteDocs.",
+  "images": {
+    "logo": "media/logo.png",
+    "favicon": "media/favicon.ico",
+    "darkLogo": ""
+  },
+  "styles": {
+    "mainColor": "#0029F5",
+    "darkModeMainColor": "#F0F0FF",
+    "navbarColor": "#000621",
+    "navbarDarkModeColor": "#000621",
+    "pagination": false
+  },
+  "apiFiles": [
+    "example.yml"
+  ],
+  "homepage": "/overview",
+  "changelog": false,
+  "navbar": [
+    {
+      "label": "API Reference",
+      "sidebarRef": "apiReference"
+    }
+  ],
+  "externalLinks": [],
+  "sidebars": [
+    {
+      "sidebarRef": "apiReference",
+      "categories": [
+        {
+          "categoryName": "Introduction",
+          "pages": [
+            "getting-started/overview"
+          ]
+        },
+        {
+          "categoryName": "Endpoints",
+          "pages": [
+            "reference/example/get-items",
+            "reference/example/create-item"
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

@@ -1,0 +1,135 @@
+---
+title: Multi Product
+slug: /multi-product
+description: Multi Product description
+---
+
+
+You can use WriteDocs to present multiple products in a single documentation portal. This can be achieved by leveraging the navbar elements, and sidebar configuration. For example, if you have two products, each with its own Guides and API Reference section. You can add each product to the navbar as dropdowns, and inside each, reference their respective sidebars. In the example below:
+
+- **Product One** has two sidebars: `product1Guides` and `product1ApiReference`.
+- **Product Two** has two sidebars: `product2Guides` and `product2ApiReference`.
+
+```json
+{
+  "websiteName": "WriteDocs Documentation",
+  "description": "Explore our documentation to learn how to create beautiful, scalable developer portals with WriteDocs.",
+  "images": {
+    "logo": "media/logo.png",
+    "favicon": "media/favicon.ico",
+    "darkLogo": ""
+  },
+  "styles": {
+    "mainColor": "#0029F5",
+    "darkModeMainColor": "#F0F0FF",
+    "navbarColor": "#000621",
+    "navbarDarkModeColor": "#000621",
+    "pagination": false
+  },
+  "apiFiles": [
+    "example.yml"
+  ],
+  "homepage": "/overview",
+  "changelog": false,
+  "navbar": [
+    {
+      "label": "Product One",
+      "dropdown": [
+        {
+          "label": "Guides",
+          "sidebarRef": "product1Guides"
+        },
+        {
+          "label": "API Reference",
+          "sidebarRef": "product1ApiReference"
+        }
+      ]
+    },
+    {
+      "label": "Product Two",
+      "dropdown": [
+        {
+          "label": "Guides",
+          "sidebarRef": "product2Guides"
+        },
+        {
+          "label": "API Reference",
+          "sidebarRef": "product2ApiReference"
+        }
+      ]
+    }
+  ],
+  "externalLinks": [],
+  "sidebars": [
+    {
+      "sidebarRef": "product1Guides",
+      "categories": [
+        {
+          "categoryName": "Introduction",
+          "pages": [
+            "docs/productOne/introduction/overview",
+            "docs/productOne/introduction/getting-started"
+          ]
+        },
+        {
+          "categoryName": "Integrating Product One",
+          "pages": [
+            "docs/productOne/integration/overview",
+            "docs/productOne/integration/dashboard"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "product1ApiReference",
+      "categories": [
+        {
+          "categoryName": "ProductOne API",
+          "pages": [
+            "reference/productOne/create-user",
+            "reference/productOne/get-user"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "product2Guides",
+      "categories": [
+        {
+          "categoryName": "Introduction",
+          "pages": [
+            "docs/productTwo/introduction/overview",
+            "docs/productTwo/introduction/getting-started"
+          ]
+        },
+        {
+          "categoryName": "Integrating Product Two",
+          "pages": [
+            "docs/productTwo/integration/overview",
+            {
+              "page": "docs/productTwo/integration/integration-methods",
+              "groupName": "Components",
+              "subpages": [
+                "docs/productTwo/integration/api-integration",
+                "docs/productTwo/integration/dashboard"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "product2ApiReference",
+      "categories": [
+        {
+          "categoryName": "ProductTwo API",
+          "pages": [
+            "reference/productTwo/create-user",
+            "reference/productTwo/get-user"
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

@@ -33,12 +33,7 @@
       ]
     }
   ],
-  "externalLinks": [
-    {
-      "link": "https://github.com/orgs/writedocs/repositories",
-      "name": "Github"
-    }
-  ],
+  "externalLinks": [],
   "sidebars": [
     {
       "sidebarRef": "guides",
@@ -71,9 +66,18 @@
                 "creating-pages/components/callouts",
                 "creating-pages/components/cards",
                 "creating-pages/components/codeblocks",
-                "creating-pages/components/media"
+                "creating-pages/components/media",
+                "creating-pages/components/custom-components"
               ]
             }
+          ]
+        },
+        {
+          "categoryName": "Use Cases",
+          "pages": [
+            "use-cases/free-plan",
+            "use-cases/multi-product",
+            "use-cases/versioning"
           ]
         }
       ]

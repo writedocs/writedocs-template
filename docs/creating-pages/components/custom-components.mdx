@@ -1,0 +1,51 @@
+---
+id: custom-components
+title: Custom Components
+slug: /custom-components
+description: Custom Components description
+---
+
+import MyCustomComponent from '@site/src/components/MyCustomComponent/MyCustomComponent';
+
+WriteDocs allows you to create your own React component, and add it to your documentation. This page guides you on how you can create and use your custom components.
+
+<Callout type="danger" title="Feature Availability">
+This feature is not available in the **Free** plan.
+</Callout>
+
+## How to Create a Custom Component
+
+To create a usable custom component in WriteDocs, you need to add the component's files to the `components` directory of your documentation repository. The [WriteDocs template](https://github.com/writedocs/writedocs-template) comes with an example `MyCustomComponent` to show you how to do it. 
+
+Just like in React, you can create your components, and add CSS customization, either directly in the component, or with a CSS file. We suggest following the example code and creating a folder for each custom component. In the example, you will see the following structure for the components folder:
+
+```
+|-- components
+  |-- MyCustomComponent
+    |-- MyCustomComponent.jsx
+    |-- myCustomComponent.css
+```
+
+<Callout type="info" title="CSS import">
+Remember to import your `css` file into your component's `jsx` file.
+</Callout>
+
+## Using your Custom Component
+
+Once your component is created, you can use it in any `mdx` file you need it. You will need only to import it in the file, adding `@site/src/` before the file's relative path. Follow the example below:
+
+```jsx
+import MyCustomComponent from '@site/src/components/MyCustomComponent/MyCustomComponent';
+```
+
+Now, to use it in your documentation page, you need to call it, just like any other available component in WriteDocs, passing the needed props for it to work:
+
+```jsx
+import MyCustomComponent from '@site/src/components/MyCustomComponent/MyCustomComponent';
+
+<MyCustomComponent name="John Doe"/>
+```
+
+This will render the following card in your page:
+
+<MyCustomComponent name="John Doe"/>

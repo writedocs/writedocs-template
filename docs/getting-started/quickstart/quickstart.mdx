@@ -4,6 +4,7 @@ slug: /quickstart
 description: quickstart description
 ---
 
+
 Create beautiful, scalable documentation portals in minutes. 
 
 <Image src="media/Mockup_WriteDocs_Light.png" srcDark="media/Mockup_WriteDocs_Dark.png"/>
@@ -22,7 +23,7 @@ WriteDocs uses GitHub to integrate your docs with your code, and make source con
 
 Start by creating a new repository in your GitHub organization using the [WriteDocs Template](https://github.com/WriteDocs/WriteDocs-template) provided on GitHub. When creating the repository, use the **`[yourcompanyname]-docs`** standard to define the repository name. This will give you a structured starting point to build your documentation quickly.
 
-<Video src="videos/quickstart-step1.mp4"/>
+<Video src="media/quickstart-step1.mp4"/>
 
 ### Step 2: Connect your repository to the WriteDocs app
 
@@ -31,16 +32,27 @@ Once your documentation repository is created, follow the steps below to connect
 2. Click **Install**.
 3. Select **Only select repositories** and look for the documentation repository created in Step 1. 
 
-<Video src="videos/quickstart-step2.mp4"/>
+<Video src="media/quickstart-step2.mp4"/>
 
 With these simple steps, WriteDocs will automatically deploy your documentation.
 
+<Callout type="warning" title="Changing your Repository's Name">
+WriteDocs don't recommend changing the repository name, but if you need to update it, contact our support at [WriteDocs Slack Community](https://join.slack.com/t/writedocscommunity/shared_invite/zt-2q61ug34g-wTczth5B_rUThMVbJIyQpg) before updating it, so we can properly configure this update on our side.
+</Callout>
+
 ### Step 3: Access your documentation
 
-Intially, your documentation will be available at **`[yourcompanyname].docs.writedocs.io`**, using the WriteDocs subdomain. 
+Initially, your documentation will be available at the **`docs.writedocs.io`** domain. To access your docs, follow the example below:
+
+|Repository name | Documentation URL |
+|:--------|:-------|
+| `myCompany-docs` | [myCompany.docs.writedocs.io](http://mycompany.docs.writedocs.io/) |
+| `docs-myCompany` | [myCompany.docs.writedocs.io](http://mycompany.docs.writedocs.io/) |
+
+
 
 <Callout type="info" title="Custom Domain">
-If you are in the Pro plan, you can add a custom domain to your documentation. For additional information, send and email to integration@writechoice.io and our team will be happy to help you set up your custom domain.
+If you are in the Pro plan, you can add a custom domain to your documentation. For additional information, open a thread at the #support channel in the [WriteDocs Slack Community](https://join.slack.com/t/writedocscommunity/shared_invite/zt-2q61ug34g-wTczth5B_rUThMVbJIyQpg) and our team will be happy to help you set up your custom domain.
 </Callout>
 
 ### Step 4: Customize your documentation (config.json)
@@ -54,3 +66,21 @@ When you push changes to the `main` branch, WriteDocs will automatically update 
 <Callout type="info" title="Beginners Guide">
 If you don't have much experience in contributing to GitHub projects or using a doc-as-code approach, you can check our [Beginners Guide](/beginners-guide) that covers the basics of working with Git and using a code editor to create docs. 
 </Callout>
+
+Whenever a new push is commited to your main branch, WriteDocs will keep you informed of the deployment state of your updates. You can keep track of this in your repository's main page, like exemplified in the video below:
+
+<Video src="media/commit-status.mp4" margin={60} />
+
+WriteDocs will keep you posted of the following situations:
+
+- **Pending**: Your new deployment is currently under way.
+
+<Image src="media/status-pending.png" size="600px"/>
+
+- **Failed/Error**: Something went wrong. If you need assistance contact our [support in slack](https://join.slack.com/t/writedocscommunity/shared_invite/zt-2q61ug34g-wTczth5B_rUThMVbJIyQpg) by clicking the **Details** link at the right side.
+
+<Image src="media/status-failed.png" size="600px"/>
+
+- **Success**: Your deploy is ready! Access it by clicking the **Details** link at the right side.
+
+<Image src="media/status-success.png" size="600px"/>

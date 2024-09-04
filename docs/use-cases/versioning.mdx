@@ -1,0 +1,95 @@
+---
+title: Multiple Versions
+slug: /multi-versions
+description: Multiple Versions description
+---
+
+
+You can leverage WriteDocs to maintain multiple versions for your documentation. Using the dropdown option in the navbar, combined with multiple sidebars, you can generate different versions. In the example below you find a **Guides** section with both **v1** and **v2**:
+
+```json
+{
+  "websiteName": "WriteDocs Documentation",
+  "description": "Explore our documentation to learn how to create beautiful, scalable developer portals with WriteDocs.",
+  "images": {
+    "logo": "media/logo.png",
+    "favicon": "media/favicon.ico",
+    "darkLogo": ""
+  },
+  "styles": {
+    "mainColor": "#0029F5",
+    "darkModeMainColor": "#F0F0FF",
+    "navbarColor": "#000621",
+    "navbarDarkModeColor": "#000621",
+    "pagination": false
+  },
+  "apiFiles": [
+    "example.yml"
+  ],
+  "homepage": "/overview",
+  "changelog": false,
+  "navbar": [
+    {
+      "label": "Guides",
+      "dropdown": [
+        {
+          "label": "v1",
+          "sidebarRef": "v1"
+        },
+        {
+          "label": "v2",
+          "sidebarRef": "v2"
+        }
+      ]
+    }
+  ],
+  "externalLinks": [],
+  "sidebars": [
+    {
+      "sidebarRef": "v1",
+      "categories": [
+        {
+          "categoryName": "Introduction",
+          "pages": [
+            "docs/introduction/overview",
+            "docs/v1/getting-started"
+          ]
+        },
+        {
+          "categoryName": "Getting Started",
+          "pages": [
+            "docs/v1/getting-started/overview",
+            "docs/v1/getting-started/dashboard"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "v2",
+      "categories": [
+        {
+          "categoryName": "Introduction",
+          "pages": [
+            "docs/introduction/overview",
+            "docs/v2/getting-started"
+          ]
+        },
+        {
+          "categoryName": "Getting Started",
+          "pages": [
+            "docs/v2/getting-started/overview",
+            {
+              "page": "docs/v2/getting-started/integration-methods",
+              "groupName": "Components",
+              "subpages": [
+                "docs/v2/getting-started/api-integration",
+                "docs/v2/getting-started/dashboard"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
