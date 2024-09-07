@@ -20,8 +20,18 @@ Add the OAS file to the **reference** folder in your documentation repository on
 To enhance the visual appeal and user experience of your endpoint pages, you can incorporate any [WriteDocs components](/components) into the endpoint `description` within your OpenAPI specification.
 </Callout>
 
-### Step 2. Link the OAS file to the `apiFile` of your config.json
-Specify the path to the OpenAPI file in the `apiFiles` attribute in the **config.json** file of your documentation repo, such as `"apiFiles": ["reference/example.yml"]`. You can add multiple OAS files as needed. 
+### Step 2. Link the OAS file to the `apiFiles` of your config.json
+Specify the path to the OpenAPI file in the `apiFiles` attribute in the **config.json** file of your documentation repo, such as `"apiFiles": ["example.yml"]`. You can add multiple OAS files as needed. 
+
+### Step 3. Use WriteDocs CLI
+
+[WriteDocs CLI](/local-development) can automatically generate the endpoint markdown pages for you. To generate it, you need to follow the steps below:
+
+1. Install WriteDocs CLI globally with `npm i -g writedocs`.
+2. Navigate to your projects root directory in your terminal. 
+3. Execute the `writedocs api` command line to generate the pages.
+
+Your generated pages can be found at the `docs/reference` folder.
 
 ### Step 3. Reference the endpoints in the sidebar of your config.json
 Define the paths to each endpoint in the [sidebar object](global-settings/#sidebars) of the **config.json** file following the standard of the example below:
@@ -71,7 +81,7 @@ paths:
   /items:
     get:
       summary: Get list of items
-      operationId: get-items #Attribute you need to reference in the slug.
+      operationId: get-items # Attribute you need to reference in the slug.
       description: |
         Retrieves a list of items.
 ```
