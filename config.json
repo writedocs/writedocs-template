@@ -6,6 +6,9 @@
     "favicon": "media/favicon.ico",
     "darkLogo": ""
   },
+  "languages": [
+    "en"
+  ],
   "styles": {
     "mainColor": "#0029F5",
     "darkModeMainColor": "#F0F0FF",
