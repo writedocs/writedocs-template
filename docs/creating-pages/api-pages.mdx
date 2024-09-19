@@ -14,7 +14,7 @@ WriteDocs uses OpenAPI Specification (OAS) files to generate endpoint pages, thu
 To generate API endpoint pages in the API reference tab, you need to follow just a few steps:
 
 ### Step 1. Add the OAS file
-Add the OAS file to the **reference** folder in your documentation repository on GitHub. 
+Add the OAS file to the **openAPI** folder in your documentation repository on GitHub. 
 
 <Callout type="success" title="Improving Endpoint Pages">
 To enhance the visual appeal and user experience of your endpoint pages, you can incorporate any [WriteDocs components](/components) into the endpoint `description` within your OpenAPI specification.
@@ -23,7 +23,7 @@ To enhance the visual appeal and user experience of your endpoint pages, you can
 ### Step 2. Link the OAS file to the `apiFiles` of your config.json
 Specify the path to the OpenAPI file in the `apiFiles` attribute in the **config.json** file of your documentation repo, such as `"apiFiles": ["example.yml"]`. You can add multiple OAS files as needed. 
 
-### Step 3. Use WriteDocs CLI
+### Step 3. Use the WriteDocs CLI
 
 [WriteDocs CLI](/local-development) can automatically generate the endpoint markdown pages for you. To generate it, you need to follow the steps below:
 
@@ -39,30 +39,40 @@ Define the paths to each endpoint in the [sidebar object](global-settings/#sideb
 
 <Tabs>
   <TabItem value="template" label="Template" default>
-    ```json
-    "apiReference": [
-      {
-        "category": "Template",
-        "pages": [
+  ```json
+  ...
+    {
+      "sidebarRef": "apiReference",
+      "categories": [
+        {
+          "categoryName": "Example",
+          "pages": [
           "reference/[OAS-file-name]/[endpoint-operation-id]"
-        ]
-      }
-    ]
-```
+          ]
+        }
+      ]
+    }
+  ...
+  ```
   </TabItem>
   <TabItem value="example" label="Example">
     ```json
-    "apiReference": [
-      {
-        "category": "MANAGE PAYMENTS",
-        "pages": [
-          "reference/payments/create-payment",
-          "reference/payments/retrieve-payment",
-          "reference/payments/capture-payment"
-        ]
-      }
-    ]
-```
+    ...
+    {
+      "sidebarRef": "apiReference",
+      "categories": [
+        {
+          "categoryName": "Example",
+          "pages": [
+          "reference/payments-api/create-payment",
+          "reference/payments-api/get-payment"
+
+          ]
+        }
+      ]
+    }
+    ...
+  ```
   </TabItem>
 </Tabs>
 
@@ -86,15 +96,17 @@ paths:
         Retrieves a list of items.
 ```
 
-### Step 4. Commit the Changes 
+### Step 4. Preview your Changes
+Run the following command of our CLI to preview your changes in the local host. 
 
-Commit your changes to the main branch to see how your endpoint pages look. To see your docs, follow the example below:
+```
+writedocs dev
+```
+
+### Step 5. Commit the Changes 
+
+Commit and push your changes to the `main` branch to see how your endpoint pages look published. To see your docs, follow the example below:
 
 |Repository name | Documentation URL |
 |:--------|:-------|
 | `myCompany-docs` | [myCompany.docs.writedocs.io](http://mycompany.docs.writedocs.io/) |
-| `docs-myCompany` | [myCompany.docs.writedocs.io](http://mycompany.docs.writedocs.io/) |
-
-<Callout type="info" title="Preview (coming soon)">
-Our team is working hard to provide a CLI that will enable you to quickly preview your docs. For now, please wait about 2 minutes to see the changes in your portal. 
-</Callout>
