@@ -28,12 +28,7 @@
     },
     {
       "label": "API Reference",
-      "dropdown": [
-        {
-          "label": "v1.0",
-          "sidebarRef": "apiReference"
-        }
-      ]
+      "sidebarRef": "apiReference"
     }
   ],
   "externalLinks": [],
@@ -44,44 +39,25 @@
         {
           "categoryName": "Getting Started",
           "pages": [
-            "getting-started/overview",
-            {
-              "page": "getting-started/quickstart/quickstart",
-              "groupName": "Quickstart",
-              "subpages": [
-                "getting-started/quickstart/beginners-guide"
-              ]
-            },
-            "getting-started/global-settings",
+            "getting-started/introduction",
             "getting-started/local-development"
           ]
         },
         {
-          "categoryName": "Creating Pages",
+          "categoryName": "Basics",
           "pages": [
-            "creating-pages/mdx-pages",
-            "creating-pages/api-pages",
-            "creating-pages/markdown-basics",
-            {
-              "page": "creating-pages/components",
-              "groupName": "Components",
+            "basics/global-settings",
+            "basics/mdx-pages",
+            "basics/api-pages",
+            "basics/components",
+            { 
+              "groupName": "Page Templates",
               "subpages": [
-                "creating-pages/components/accordions",
-                "creating-pages/components/callouts",
-                "creating-pages/components/cards",
-                "creating-pages/components/codeblocks",
-                "creating-pages/components/media",
-                "creating-pages/components/custom-components"
+                "basics/page-templates/api-introduction",
+                "basics/page-templates/environments",
+                "basics/page-templates/authentication"
               ]
             }
-          ]
-        },
-        {
-          "categoryName": "Use Cases",
-          "pages": [
-            "use-cases/free-plan",
-            "use-cases/multi-product",
-            "use-cases/versioning"
           ]
         }
       ]
