@@ -47,9 +47,7 @@
           "categoryName": "Basics",
           "pages": [
             "basics/global-settings",
-            "basics/mdx-pages",
-            "basics/api-pages",
-            "basics/components",
+            "basics/markdown-basics",
             { 
               "groupName": "Page Templates",
               "subpages": [
