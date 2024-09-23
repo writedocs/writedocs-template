@@ -19,7 +19,7 @@
   "apiFiles": [
     "example.yml"
   ],
-  "homepage": "/overview",
+  "homepage": "/introduction",
   "changelog": false,
   "navbar": [
     {
@@ -48,7 +48,7 @@
           "pages": [
             "basics/global-settings",
             "basics/markdown-basics",
-            { 
+            {
               "groupName": "Page Templates",
               "subpages": [
                 "basics/page-templates/api-introduction",
