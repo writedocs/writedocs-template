@@ -16,9 +16,7 @@
     "navbarDarkModeColor": "#000621",
     "pagination": false
   },
-  "apiFiles": [
-    "example.yml"
-  ],
+  "apiFiles": [],
   "homepage": "/introduction",
   "changelog": false,
   "navbar": [
