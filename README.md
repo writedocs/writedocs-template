@@ -37,6 +37,7 @@ Starter for a documentation site built with [Writedocs](https://preview.writedoc
 ├── index.mdx           # home page (/)
 ├── docs/               # pages
 ├── api-reference/      # API intro + openapi.yaml (endpoint pages are generated)
+├── snippets/           # reusable React/MDX components, imported by pages
 └── images/             # logos, favicon, page images
 ```
 

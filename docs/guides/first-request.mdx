@@ -3,6 +3,8 @@ title: Create your first order
 description: A complete request and response, field by field.
 ---
 
+import AmountCalculator from '/snippets/AmountCalculator.jsx';
+
 This guide creates an order with the [Create an order](/api-reference/orders/post-orders) endpoint.
 
 ## Request
@@ -41,6 +43,10 @@ order = requests.post(
 <Parameter name="amount" type="integer" required>
   Amount in the smallest currency unit (cents for USD).
 </Parameter>
+
+Not sure what to send? Convert a price:
+
+<AmountCalculator />
 
 <Parameter name="currency" type="string" required>
   Three-letter ISO 4217 code, for example `USD`.
